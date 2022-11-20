@@ -1,0 +1,52 @@
+/*BufferedReader reader = new BufferedReader(new FileReader("src/Data_for_tests/test_6"));
+
+          for(int n = 3; n <= 10; n++) {
+
+              double[][] A = MathFunctions.getBadMatrix(n, Math.pow(10, -5));
+              double[][] b = new double[n][1];
+              for (int i = 0; i < n-1; i++) {
+                  b[i][0] = -1;
+              }
+              b[n-1][0] = 1;
+              double[] correctAns_ = Arrays.stream(reader.readLine().split(" ")).mapToDouble(Double::parseDouble).toArray();
+              double[][] correctAns = new double[correctAns_.length][1];
+              for (int i = 0; i < correctAns.length; i++) {
+                  correctAns[i][0] = correctAns_[i];
+              }
+
+              System.out.println("Printing results for test 6 in " + n + " order matrix :");
+              System.out.println("Matrix A:");
+              MathFunctions.printMatrix(A);
+              System.out.println("\nVector b:");
+              MathFunctions.printMatrix(b);
+
+              System.out.println("\nSolution and data of Gauss:");
+              double[][] x = SLAEAccurateMethods.GaussMethod(A, b);
+              double[][] differ = MathFunctions.subtractMatrices(x, correctAns);
+              double normDiffer = Math.min(MathFunctions.norm1(differ), MathFunctions.normInfinity(differ));
+
+              System.out.print(" {");
+              for (int j = 0; j < x.length; j++) {
+                  System.out.print(x[j][0] + " ");
+              }
+              System.out.print("} [" + normDiffer);
+              System.out.print("] ");
+              System.out.println();
+
+
+              System.out.println("\nSolution and data of Reflection method:");
+
+              x = SLAEAccurateMethods.ReflectionMethod(A, b);
+              differ = MathFunctions.subtractMatrices(x, correctAns);
+              normDiffer = Math.min(MathFunctions.norm1(differ), MathFunctions.normInfinity(differ));
+              System.out.print(" {");
+              for (int j = 0; j < x.length; j++) {
+                  System.out.print(x[j][0] + " ");
+              }
+              System.out.print("} [" + normDiffer);
+              System.out.print("] ");
+              System.out.println();
+
+              System.out.println();
+          }
+*/

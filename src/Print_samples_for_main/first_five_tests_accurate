@@ -1,0 +1,59 @@
+/*
+for (int s = 1; s < 6; s++) {
+            BufferedReader reader = new BufferedReader(new FileReader("src/Data_for_tests/test_" + s));
+
+            double[][] A = new double[3][];
+            double[][] b = new double[3][1];
+            for (int i = 0; i < 3; i++) {
+                A[i] = Arrays.stream(reader.readLine().split(" ")).mapToDouble(Double::parseDouble).toArray();
+            }
+            reader.readLine();
+            double[] pre_b = Arrays.stream(reader.readLine().split(" ")).mapToDouble(Double::parseDouble).toArray();
+            for (int i = 0; i < 3; i++) {
+                b[i][0] = pre_b[i];
+            }
+            reader.readLine();
+            double[] correctAns_ = Arrays.stream(reader.readLine().split(" ")).mapToDouble(Double::parseDouble).toArray();
+            double[][] correctAns = new double[correctAns_.length][1];
+            for (int i = 0; i < correctAns.length; i++) {
+                correctAns[i][0] = correctAns_[i];
+            }
+            double differ;
+
+            System.out.println("Printing results for test " + s + ":");
+            System.out.println("Matrix A:");
+            MathFunctions.printMatrix(A);
+            System.out.println("\nVector b:");
+            MathFunctions.printMatrix(b);
+
+            System.out.println("\nSolution and data of Gauss:");
+            double[][] x = SLAEAccurateMethods.GaussMethod(A, b);
+            differ = Math.min(MathFunctions.norm1(MathFunctions.subtractMatrices(x, correctAns)),
+                    MathFunctions.normInfinity(MathFunctions.subtractMatrices(x, correctAns)));
+            System.out.print("{");
+            for (int j = 0; j < x.length; j++) {
+                System.out.print(x[j][0] + " ");
+            }
+            System.out.print("}  [");
+            System.out.print(differ);
+            System.out.print("] ");
+            System.out.println();
+
+
+            System.out.println("\nSolution and data of Reflection method:");
+            x = SLAEAccurateMethods.ReflectionMethod(A, b);
+            differ = Math.min(MathFunctions.norm1(MathFunctions.subtractMatrices(x, correctAns)),
+                    MathFunctions.normInfinity(MathFunctions.subtractMatrices(x, correctAns)));
+            System.out.print("{ ");
+            for (int j = 0; j < x.length; j++) {
+                System.out.print(x[j][0] + " ");
+            }
+            System.out.print("}  [");
+            System.out.print(differ);
+            System.out.print("] ");
+            System.out.println();
+
+
+            System.out.println();
+            reader.close();
+        }*/
